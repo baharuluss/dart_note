@@ -6,8 +6,6 @@ void main() {
   -verileri saklamayı ve yönetmeyi sağlıyor.
   -veri adı anlamlı olmalı
   */ 
-  String verininAdi = "verinin degeri";
-  String hello = "Hello3";
   
 
 } 
