@@ -37,9 +37,9 @@ print("User 2 money: $user2Money");
 //----
 //Odev2
 //Benim bir halı saham var 100 kişi kapasiteli
-//saat 10'da 20 kişilik bir musteri1 maç yapacak ve 20 kesin kesin gelecek
-//saat 10'da musteri2 gelip bana 50 kişilik yer ayırtıcak
-//bu işlem sonrasında benim halı saha kapasitem kaç kalmıştır.
+//saat 10'da 20 kişilik bir musteri1 maç yapacak ve 20 kesin gelecek
+//saat 10'da musteri2 gelip bana 50 kişilik yer ayırtacak?
+//bu işlem sonrasında benim halı saha kapasitem ne kadardır?
 
 const int musteri1 = 20;
 const int musteri2 = 50;
