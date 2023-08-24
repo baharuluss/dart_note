@@ -9,5 +9,7 @@ void main() {
 
   print(myMoney.isEven); // çift mi
   print(myMoney.isOdd); // tek mi
-  
+
+  // debug kullan ! 01:53:26 Debugging 
+
 }
