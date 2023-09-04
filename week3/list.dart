@@ -73,6 +73,25 @@ void main() {
       print("by");
     }
   }
+  print('aaa');
+  List<dynamic> user = [1,'a',true]; // bu kulanımı önermiyor veli hoca
+
+  for (var item in user){ // liste içerisindeki itemlerı dolaşıyor
+    print(item);
+  }
+  // yukarıdaki kullanım gereksiz onun yerine aşağıdaki  
+
+  List<String> userNames = ["ali", "mehmet", "ayşe"];
+  userNames.contains("veli");
+
+  /*
+  yukarıdaki contains kullanılmasaydı aşağıdaki gibi uzatacaktın performans ve kontol için contains daha iyi.
+  for (var item in userNames) {
+    if (item == "veli") {
+      print("var");
+    }
+  } 
+  */
 
 
-}
+} 
