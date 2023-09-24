@@ -1,5 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-  import 'dart:html';
+import '../week4/class_extends.dart';
 
 void main(List<String> args) {
     final model = CarModel(category: CarModels.bmw, name: 'bmw x5', money: 12356, isSecondHand: false);
@@ -46,10 +45,33 @@ void main(List<String> args) {
   final index = carItems.indexOf(newCar);
   print(index);
 
-  carItems.add(CarModel(category: CarModels.mercedes, name: 'merce', money:1515 ));
-  carItems.sort();
+  final _mercedes =CarModel(category: CarModels.mercedes, name: 'merer', money: 12345);
+  calculateToUser(carItems);
+  carItems.add(_mercedes);
+  
+  carItems.sort((first, second) => second.money.compareTo(first.money));
 
   print(carItems);
+
+  final users= carItems.expand((element) => element.users).toList();
+
+  carItems.remove(_mercedes);
+  carItems.removeWhere((element) => element.category == CarModels.bmw || element.money <30);
+}
+
+void calculateToUser(List<CarModel> items) {
+  // itemleri düzelt bmw olanları yamaha yap
+  final _items = List<CarModel>.from(items);
+  final newItems = items.map((CarModel e){
+    if (e.category == CarModels.bmw) {
+      e.category = CarModels.yamaha;
+    }
+
+    if (e.isSecondHand) {
+      e.isSecondHand =false;
+    }
+    return e;
+  });
 }
 
   // benim bir arabalar sınıfım olacak
@@ -71,10 +93,18 @@ void main(List<String> args) {
 
   //bana arabalarımı küçükten büyüğe doğru sıralar mısın?
 
+  // bütün arabalarımı user yapacağım
+
+  // bu son ekleneni silelim
+  //bmw ve 30 dan düşük olanları silelim
+
 class CarModel {
-    final CarModels category; // final çünkü model, isim, parası değişmeyecek
+    CarModels category; // final çünkü model, isim, parası değişmeyecek
     final String name;
     final double money;
+
+    List<User> users;
+
     String? city; // null olabilir
     bool isSecondHand;
   CarModel({
@@ -83,6 +113,7 @@ class CarModel {
     required this.money,
     this.city,
     this.isSecondHand= true, // bunu kullanıcıdan isteme kullanıcı belirtmiyorsa secondHand'dir. KURALDAN DOLAYI
+    this.users= const []
   });
 
   @override //equality ekleyince çalışıyor.
