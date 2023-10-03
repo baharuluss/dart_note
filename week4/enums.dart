@@ -25,6 +25,7 @@ enum Mouses {
 //enum aslında tamsayı sınıfıdır
 //çok önemli
 
+
 extension MousesSelectedExtension on Mouses { //11. satır
   bool isCheckName(String name){
     return this.name == name;
